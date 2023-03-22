@@ -41,16 +41,3 @@ if (monto < 10) {
     };
 }
 
-/*******************    **************************** */
-/*   sección compra de criptomonedas     */
-
-class Cripto {
-    constructor(nombre, ticker, chain, precio) {
-        this.nombre = nombre;
-        this.ticker = ticker;
-        this.chain = chain;
-        this.precio = precio
-    }
-}
-
-const cripto1 = new Cripto("Bitcoin", "BTC", "bitcoin", 28000);
