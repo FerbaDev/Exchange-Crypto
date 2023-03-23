@@ -28,7 +28,6 @@ const cripto10 = new Cripto("Polkadot", "DOT", "bsc", 6.2);
 
 const criptomonedas = [cripto1, cripto2, cripto3, cripto4, cripto5, cripto6, cripto7, cripto8, cripto9, cripto10];
 
-console.log(criptomonedas[0].nombre);
 
 let recibeCripto
 /****************** función comprar criptos *********/
@@ -43,16 +42,54 @@ alert(todasLasCriptos.join("//"));
 
 
 let criptoSeleccionada = prompt("Seleccione criptomoneda a comprar");
-console.log (criptomonedas.find((cripto) => cripto.nombre == criptoSeleccionada));
+alert(`Usted seleccionó ${criptoSeleccionada}`);
 
 let criptoPrecio = 0;
 
-if (criptoSeleccionada == "Bitcoin") {
+if (criptoSeleccionada === "Bitcoin") {
     criptoPrecio = 28000;
-    console.log(criptoPrecio);
+    alert(`El precio de esta cripto es ${criptoPrecio}`);
+} else if (criptoSeleccionada === "Ether") {
+    criptoPrecio = 1800;
+    alert(`El precio de esta cripto es ${criptoPrecio}`);
+} else if (criptoSeleccionada === "Tether") {
+    criptoPrecio = 1;
+    alert(`El precio de esta cripto es ${criptoPrecio}`);
+} else if (criptoSeleccionada === "BNB") {
+    criptoPrecio = 330;
+    alert(`El precio de esta cripto es ${criptoPrecio}`);
+} else if (criptoSeleccionada == "Ripple") {
+    criptoPrecio = 0.44;
+    alert(`El precio de esta cripto es ${criptoPrecio}`);
+} else if (criptoSeleccionada == "Uniswap") {
+    criptoPrecio = 6.3;
+    alert(`El precio de esta cripto es ${criptoPrecio}`);
+} else if (criptoSeleccionada == "PancakeSwap") {
+    criptoPrecio = 3.8;
+    alert(`El precio de esta cripto es ${criptoPrecio}`);
+} else if (criptoSeleccionada == "Aave") {
+    criptoPrecio = 77;
+    alert(`El precio de esta cripto es ${criptoPrecio}`);
+} else if (criptoSeleccionada == "Dogecoin") {
+    criptoPrecio = 0.07;
+    alert(`El precio de esta cripto es ${criptoPrecio}`);
+} else if (criptoSeleccionada == "Polkadot") {
+    criptoPrecio = 6.2;
+    alert(`El precio de esta cripto es ${criptoPrecio}`);
+} else {
+    alert("Esa opción no está disponible")
 }
 
+
+
+
 let montoEnDolares = Number.parseInt(prompt("Seleccione monto en dólares"))
+
+
+
+
+
+
 
 let recibe = montoEnDolares / criptoPrecio;
 alert(`Vas a recibir ${recibe} monedas`);
