@@ -24,31 +24,35 @@ const cripto9 = new Cripto("Dogecoin", "DOGE", "bsc", 0.07);
 const cripto10 = new Cripto("Polkadot", "DOT", "bsc", 6.2);
 
 
-/********* array  ************/
+/********* arrays  ************/
 
 const criptomonedas = [cripto1, cripto2, cripto3, cripto4, cripto5, cripto6, cripto7, cripto8, cripto9, cripto10];
 
 console.log(criptomonedas[0].nombre);
 
-
+let recibeCripto
 /****************** función comprar criptos *********/
 
 alert("Bienvenido al exchange. Presione para continuar.")
-let criptoSeleccionada = prompt("Seleccione criptomoneda a comprar");
 
+
+let todasLasCriptos = criptomonedas.map((cripto) => cripto.nombre + " está en " + "$" + cripto.precio);
+
+
+alert(todasLasCriptos.join("//"));
+
+
+let criptoSeleccionada = prompt("Seleccione criptomoneda a comprar");
 console.log (criptomonedas.find((cripto) => cripto.nombre == criptoSeleccionada));
 
+let criptoPrecio = 0;
 
+if (criptoSeleccionada == "Bitcoin") {
+    criptoPrecio = 28000;
+    console.log(criptoPrecio);
+}
 
 let montoEnDolares = Number.parseInt(prompt("Seleccione monto en dólares"))
 
-
-/******************* funcion recibe criptos */
-
-function recibeCripto(montoEnDolares, criptoPrecio) {
-    let recibe = 0;
-    recibe = montoEnDolares / criptoPrecio;
-    return recibe;
-}
-
-console.log(recibeCripto());
+let recibe = montoEnDolares / criptoPrecio;
+alert("Vas a recibir " + recibe + " monedas.");
