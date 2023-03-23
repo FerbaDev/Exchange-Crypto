@@ -55,4 +55,4 @@ if (criptoSeleccionada == "Bitcoin") {
 let montoEnDolares = Number.parseInt(prompt("Seleccione monto en dólares"))
 
 let recibe = montoEnDolares / criptoPrecio;
-alert("Vas a recibir " + recibe + " monedas.");
+alert(`Vas a recibir ${recibe} monedas`);
