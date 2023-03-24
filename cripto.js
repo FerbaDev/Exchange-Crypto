@@ -95,3 +95,15 @@ let recibe = montoEnDolares / criptoPrecio;
 alert(`Vas a recibir ${recibe} monedas`);
 
 alert("Muchas gracias por operar con nosotros");
+
+
+
+
+function filtrarBlockchain() {
+    criptomonedas.forEach(cripto => {
+
+        const criptoPorBlockchain = criptomonedas.filter(cripto => cripto.chain == prompt("filtre por blockchain:"));
+        
+        
+    })
+}
