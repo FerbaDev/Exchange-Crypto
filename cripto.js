@@ -14,27 +14,18 @@ class Cripto {
     }
 }
 
-/************* objetos - criptos */
+const bitcoin = new Cripto("Bitcoin", "BTC", "bitcoin", 28000);
+const ether = new Cripto("Ether", "ETH", "ethereum", 1800);
+const tether = new Cripto("Tether", "USDT", "ethereum", 1);
+const bnb = new Cripto("BNB", "BNB", "bsc", 330);
+const ripple = new Cripto("Ripple", "XRP", "bsc", 0.44);
+const uniswap = new Cripto("Uniswap", "UNI", "ethereum", 6.3);
+const pancakeSwap = new Cripto("PancakeSwap", "CAKE", "bsc", 3.8);
+const aave = new Cripto("Aave", "AAVE", "ethereum", 77);
+const dogecoin = new Cripto("Dogecoin", "DOGE", "bsc", 0.07);
+const polkadot = new Cripto("Polkadot", "DOT", "bsc", 6.2);
 
-const cripto1 = new Cripto("Bitcoin", "BTC", "bitcoin", 28000);
-const cripto2 = new Cripto("Ether", "ETH", "ethereum", 1800);
-const cripto3 = new Cripto("Tether", "USDT", "ethereum", 1);
-const cripto4 = new Cripto("BNB", "BNB", "bsc", 330);
-const cripto5 = new Cripto("Ripple", "XRP", "bsc", 0.44);
-const cripto6 = new Cripto("Uniswap", "UNI", "ethereum", 6.3);
-const cripto7 = new Cripto("PancakeSwap", "CAKE", "bsc", 3.8);
-const cripto8 = new Cripto("Aave", "AAVE", "ethereum", 77);
-const cripto9 = new Cripto("Dogecoin", "DOGE", "bsc", 0.07);
-const cripto10 = new Cripto("Polkadot", "DOT", "bsc", 6.2);
-
-
-/********* arrays  ************/
-
-const criptomonedas = [cripto1, cripto2, cripto3, cripto4, cripto5, cripto6, cripto7, cripto8, cripto9, cripto10];
-
-
-let recibeCripto
-/****************** función comprar criptos *********/
+const criptomonedas = [bitcoin, ether, tether, bnb, ripple, uniswap, pancakeSwap, aave, dogecoin, polkadot];
 
 alert("Bienvenido al exchange. Presione para continuar.")
 
