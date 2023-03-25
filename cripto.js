@@ -1,5 +1,9 @@
-/*******************    **************************** */
-/*   sección compra de criptomonedas     */
+const bienvenido = () => {
+    let nombre = prompt("Ingrese su nombre")
+    return alert(`hola ${nombre}`)
+}
+
+bienvenido();
 
 class Cripto {
     constructor(nombre, ticker, chain, precio) {
