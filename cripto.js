@@ -8,9 +8,14 @@ bienvenido();
 class Cripto {
     constructor(nombre, ticker, chain, precio) {
         this.nombre = nombre;
-        this.ticker = ticker;
+        this.ticker = ticker
         this.chain = chain;
         this.precio = precio;
+        this.comprar = function () {
+            let total = monto / this.precio;
+            return alert(`usted va a comprar ${total} ${this.nombre}`);
+            
+        }
     }
 }
 
@@ -35,70 +40,33 @@ let todasLasCriptos = criptomonedas.map((cripto) => cripto.nombre + " está en "
 
 alert(todasLasCriptos.join("//"));
 
+let criptoElegida = prompt("que cripto quiere comprar?")
 
-let criptoSeleccionada = prompt("Seleccione criptomoneda a comprar");
-alert(`Usted seleccionó ${criptoSeleccionada}`);
+let monto = prompt("ingrese monto");
 
-let criptoPrecio = 0;
-
-if (criptoSeleccionada === "Bitcoin") {
-    criptoPrecio = 28000;
-    alert(`El precio de esta cripto es ${criptoPrecio}`);
-} else if (criptoSeleccionada === "Ether") {
-    criptoPrecio = 1800;
-    alert(`El precio de esta cripto es ${criptoPrecio}`);
-} else if (criptoSeleccionada === "Tether") {
-    criptoPrecio = 1;
-    alert(`El precio de esta cripto es ${criptoPrecio}`);
-} else if (criptoSeleccionada === "BNB") {
-    criptoPrecio = 330;
-    alert(`El precio de esta cripto es ${criptoPrecio}`);
-} else if (criptoSeleccionada == "Ripple") {
-    criptoPrecio = 0.44;
-    alert(`El precio de esta cripto es ${criptoPrecio}`);
-} else if (criptoSeleccionada == "Uniswap") {
-    criptoPrecio = 6.3;
-    alert(`El precio de esta cripto es ${criptoPrecio}`);
-} else if (criptoSeleccionada == "PancakeSwap") {
-    criptoPrecio = 3.8;
-    alert(`El precio de esta cripto es ${criptoPrecio}`);
-} else if (criptoSeleccionada == "Aave") {
-    criptoPrecio = 77;
-    alert(`El precio de esta cripto es ${criptoPrecio}`);
-} else if (criptoSeleccionada == "Dogecoin") {
-    criptoPrecio = 0.07;
-    alert(`El precio de esta cripto es ${criptoPrecio}`);
-} else if (criptoSeleccionada == "Polkadot") {
-    criptoPrecio = 6.2;
-    alert(`El precio de esta cripto es ${criptoPrecio}`);
+if (criptoElegida == "Bitcoin") {
+    bitcoin.comprar();
+} else if (criptoElegida == "Ether") {
+    ether.comprar();
+} else if (criptoElegida == "Tether") {
+    tether.comprar();
+} else if (criptoElegida == "BNB") {
+    bnb.comprar();
+} else if (criptoElegida == "Ripple") {
+    ripple.comprar();
+} else if (criptoElegida == "Uniswap") {
+    uniswap.comprar();
+} else if (criptoElegida == "PancakeSwap") {
+    pancakeSwap.comprar();
+} else if (criptoElegida == "Aave") {
+    aave.comprar();
+} else if (criptoElegida == "Dogecoin") {
+    dogecoin.comprar();
+} else if (criptoElegida == "Polkadot") {
+    polkadot.comprar();
 } else {
-    alert("Esa opción no está disponible")
+    alert("asegurese de escribir el nombre con mayuscula")
 }
 
 
-
-
-let montoEnDolares = Number.parseInt(prompt("Seleccione monto en dólares a comprar"))
-
-
-
-
-
-
-
-let recibe = montoEnDolares / criptoPrecio;
-alert(`Vas a recibir ${recibe} monedas`);
-
-alert("Muchas gracias por operar con nosotros");
-
-
-
-
-function filtrarBlockchain() {
-    criptomonedas.forEach(cripto => {
-
-        const criptoPorBlockchain = criptomonedas.filter(cripto => cripto.chain == prompt("filtre por blockchain:"));
-        
-        
-    })
-}
+alert(`Muchas gracias por operar con nosotros ${nombre}`);
