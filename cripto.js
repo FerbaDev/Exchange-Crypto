@@ -1,3 +1,5 @@
+
+
 const bienvenido = () => {
     let nombre = prompt("Ingrese su nombre")
     return alert(`hola ${nombre}`)
@@ -32,6 +34,7 @@ const polkadot = new Cripto("Polkadot", "DOT", "bsc", 6.2);
 
 const criptomonedas = [bitcoin, ether, tether, bnb, ripple, uniswap, pancakeSwap, aave, dogecoin, polkadot];
 
+
 alert("Bienvenido al exchange. Presione para continuar.")
 
 
@@ -41,6 +44,7 @@ let todasLasCriptos = criptomonedas.map((cripto) => cripto.nombre + " está en "
 alert(todasLasCriptos.join("//"));
 
 let criptoElegida = prompt("que cripto quiere comprar?")
+console.log(criptomonedas.find((cripto) => {return cripto.nombre == criptoElegida}))
 
 let monto = prompt("ingrese monto");
 
@@ -69,4 +73,5 @@ if (criptoElegida == "Bitcoin") {
 }
 
 
-alert(`Muchas gracias por operar con nosotros ${nombre}`);
+
+alert(`Muchas gracias por operar con nosotros`);
