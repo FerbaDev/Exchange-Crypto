@@ -10,7 +10,7 @@ bienvenido();
 class Cripto {
     constructor(nombre, ticker, chain, precio) {
         this.nombre = nombre;
-        this.ticker = ticker
+        this.ticker = ticker;
         this.chain = chain;
         this.precio = precio;
         this.comprar = function () {
@@ -35,7 +35,7 @@ const polkadot = new Cripto("Polkadot", "DOT", "bsc", 6.2);
 const criptomonedas = [bitcoin, ether, tether, bnb, ripple, uniswap, pancakeSwap, aave, dogecoin, polkadot];
 
 
-alert("Bienvenido al exchange. Presione para continuar.")
+alert("Bienvenido al exchange. Presione para continuar.");
 
 
 let todasLasCriptos = criptomonedas.map((cripto) => cripto.nombre + " está en " + "$" + cripto.precio);
@@ -43,13 +43,13 @@ let todasLasCriptos = criptomonedas.map((cripto) => cripto.nombre + " está en "
 
 alert(todasLasCriptos.join("//"));
 
-let criptoElegida = prompt("que cripto quiere comprar?")
+let criptoElegida = prompt("que cripto quiere comprar?");
 
 /**este console.log que sigue lo dejé como para tener la fórmula
  *  hecha pero no la puedo incorporar a una funcion que me retorne el precio
  *  de la cripto elegida dividida el monto a comprar
  */
-console.log(criptomonedas.find((cripto) => {return cripto.nombre == criptoElegida}))
+console.log(criptomonedas.find((cripto) => {return cripto.nombre == criptoElegida}));
 
 let monto = prompt("ingrese monto");
 
@@ -74,7 +74,7 @@ if (criptoElegida == "Bitcoin") {
 } else if (criptoElegida == "Polkadot") {
     polkadot.comprar();
 } else {
-    alert("asegurese de escribir el nombre con mayuscula")
+    alert("asegurese de escribir el nombre con mayuscula");
 }
 
 alert(`Muchas gracias por operar con nosotros`);
