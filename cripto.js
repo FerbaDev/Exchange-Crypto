@@ -13,7 +13,7 @@ class Cripto {
         this.ticker = ticker;
         this.chain = chain;
         this.precio = precio;
-        this.comprar = function () {
+        this.comprar = function (monto) {
             let total = monto / this.precio;
             return alert(`usted va a comprar ${total} ${this.nombre}`);
             
@@ -45,31 +45,31 @@ alert(todasLasCriptos.join("//"));
 
 let criptoElegida = prompt("que cripto quiere comprar?");
 
-
-console.log(criptomonedas.find((cripto) => {return cripto.nombre == criptoElegida}));
+const criptoSeleccionada = criptomonedas.find((cripto) => cripto.nombre == criptoElegida)
+console.log(criptoSeleccionada);
 
 let monto = prompt("ingrese monto");
 
 if (criptoElegida == "Bitcoin") {
-    bitcoin.comprar();
+    bitcoin.comprar(monto);
 } else if (criptoElegida == "Ether") {
-    ether.comprar();
+    ether.comprar(monto);
 } else if (criptoElegida == "Tether") {
-    tether.comprar();
+    tether.comprar(monto);
 } else if (criptoElegida == "BNB") {
-    bnb.comprar();
+    bnb.comprar(monto);
 } else if (criptoElegida == "Ripple") {
-    ripple.comprar();
+    ripple.comprar(monto);
 } else if (criptoElegida == "Uniswap") {
-    uniswap.comprar();
+    uniswap.comprar(monto);
 } else if (criptoElegida == "PancakeSwap") {
-    pancakeSwap.comprar();
+    pancakeSwap.comprar(monto);
 } else if (criptoElegida == "Aave") {
-    aave.comprar();
+    aave.comprar(monto);
 } else if (criptoElegida == "Dogecoin") {
-    dogecoin.comprar();
+    dogecoin.comprar(monto);
 } else if (criptoElegida == "Polkadot") {
-    polkadot.comprar();
+    polkadot.comprar(monto);
 } else {
     alert("asegurese de escribir el nombre con mayuscula");
 }
