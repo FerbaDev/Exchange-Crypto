@@ -45,10 +45,7 @@ alert(todasLasCriptos.join("//"));
 
 let criptoElegida = prompt("que cripto quiere comprar?");
 
-/**este console.log que sigue lo dejé como para tener la fórmula
- *  hecha pero no la puedo incorporar a una funcion que me retorne el precio
- *  de la cripto elegida dividida el monto a comprar
- */
+
 console.log(criptomonedas.find((cripto) => {return cripto.nombre == criptoElegida}));
 
 let monto = prompt("ingrese monto");
