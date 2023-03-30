@@ -1,8 +1,8 @@
 
 
 const bienvenido = () => {
-    let nombre = prompt("Ingrese su nombre")
-    return alert(`hola ${nombre}`)
+    let nombre = prompt("Ingrese su nombre");
+    return alert(`hola ${nombre}`);
 }
 
 bienvenido();
