@@ -7,14 +7,25 @@ body {
     background-color: #4158D0;
     background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
     height: 100vh;
+}
+header {
+    background-color: #324dd570;
+    padding: 25px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #FFCC70;
+    text-shadow: 1px 1px rgba(62, 39, 211, 0.282);
+    font-size: smaller;
+}
+main {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 .container {
-    background-color: #4159d048;
+    background-color: #334dcf48;
     padding: 25px;
+    margin-top: 80px;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
@@ -74,4 +85,10 @@ input::placeholder {
 }
 .boton:hover {
     background-color: #f5b640;
+}
+
+footer {
+    position: fixed;
+    bottom: 10px;
+    margin: 20px;
 }

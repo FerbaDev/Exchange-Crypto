@@ -1,11 +1,11 @@
 
 
-const bienvenido = () => {
-    let nombre = prompt("Ingrese su nombre");
-    return alert(`hola ${nombre}`);
-}
+// const bienvenido = () => {
+//     let nombre = prompt("Ingrese su nombre");
+//     return alert(`hola ${nombre}`);
+// }
 
-bienvenido();
+// bienvenido();
 
 class Cripto {
     constructor(nombre, ticker, chain, precio) {
@@ -43,13 +43,16 @@ const topBox = document.querySelector(".top-box");
 
 topBox.append(listaCriptos);
 
-alert("Bienvenido al exchange. Presione para continuar.");
+// alert("Bienvenido al exchange. Presione para continuar.");
 
 
 let todasLasCriptos = criptomonedas.map((cripto) => cripto.nombre + " está en " + "$" + cripto.precio);
+let header = document.querySelector("header");
+header.append(todasLasCriptos.join(" // "));
 
 
-alert(todasLasCriptos.join("//"));
+
+// alert(todasLasCriptos.join("//"));
 
 let criptoElegida = prompt("que cripto quiere comprar?");
 
