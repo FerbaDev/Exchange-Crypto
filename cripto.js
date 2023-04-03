@@ -33,6 +33,15 @@ const polkadot = new Cripto("Polkadot", "DOT", "bsc", 6.2);
 
 const criptomonedas = [bitcoin, ether, tether, bnb, ripple, uniswap, pancakeSwap, aave, dogecoin, polkadot];
 
+const listaCriptos = document.createElement("select");
+
+for (cripto of criptomonedas) {
+    listaCriptos.innerHTML += `<option value="">${cripto.nombre}</option>`
+}
+
+const topBox = document.querySelector(".top-box");
+
+topBox.append(listaCriptos);
 
 alert("Bienvenido al exchange. Presione para continuar.");
 
