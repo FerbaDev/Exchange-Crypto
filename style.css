@@ -74,6 +74,15 @@ input::placeholder {
     color: antiquewhite;
     font-size: small;
 }
+#recibe {
+    background-color: #4159d060;
+    border-radius: 5px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: small;
+    padding: 3px;
+    color: #f5b640c0;
+    width: 95%;
+}
 .boton {
     background-color: #FFCC70;
     padding: 10px;

@@ -1,12 +1,4 @@
 
-
-// const bienvenido = () => {
-//     let nombre = prompt("Ingrese su nombre");
-//     return alert(`hola ${nombre}`);
-// }
-
-// bienvenido();
-
 class Cripto {
     constructor(nombre, ticker, chain, precio) {
         this.nombre = nombre;
@@ -34,25 +26,21 @@ const polkadot = new Cripto("Polkadot", "DOT", "bsc", 6.2);
 const criptomonedas = [bitcoin, ether, tether, bnb, ripple, uniswap, pancakeSwap, aave, dogecoin, polkadot];
 
 const listaCriptos = document.createElement("select");
+listaCriptos.classList.add("listaCriptos");
 
 for (cripto of criptomonedas) {
-    listaCriptos.innerHTML += `<option value="">${cripto.nombre}</option>`
+    listaCriptos.innerHTML += `<option class="criptoElegida" value="">${cripto.nombre}</option>`
 }
 
 const topBox = document.querySelector(".top-box");
 
 topBox.append(listaCriptos);
 
-// alert("Bienvenido al exchange. Presione para continuar.");
-
 
 let todasLasCriptos = criptomonedas.map((cripto) => cripto.nombre + " está en " + "$" + cripto.precio);
 let header = document.querySelector("header");
 header.append(todasLasCriptos.join(" // "));
 
-
-
-// alert(todasLasCriptos.join("//"));
 
 let criptoElegida = prompt("que cripto quiere comprar?");
 
@@ -64,8 +52,5 @@ let monto = prompt("ingrese monto");
 criptoSeleccionada.comprar(monto);
 
 
-// } else {
-//     alert("asegurese de escribir el nombre con mayuscula");
-// }
 
-alert(`Muchas gracias por operar con nosotros`);
+// alert(`Muchas gracias por operar con nosotros`);
