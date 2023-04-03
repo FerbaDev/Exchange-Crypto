@@ -25,6 +25,12 @@ const polkadot = new Cripto("Polkadot", "DOT", "bsc", 6.2);
 
 const criptomonedas = [bitcoin, ether, tether, bnb, ripple, uniswap, pancakeSwap, aave, dogecoin, polkadot];
 
+//header
+let todasLasCriptos = criptomonedas.map((cripto) => cripto.nombre + " está en " + "$" + cripto.precio);
+let header = document.querySelector("header");
+header.append(todasLasCriptos.join(" // "));
+
+//seleccion
 const listaCriptos = document.createElement("select");
 listaCriptos.classList.add("listaCriptos");
 
@@ -36,20 +42,24 @@ const topBox = document.querySelector(".top-box");
 
 topBox.append(listaCriptos);
 
+//empiezo con inputs
 
-let todasLasCriptos = criptomonedas.map((cripto) => cripto.nombre + " está en " + "$" + cripto.precio);
-let header = document.querySelector("header");
-header.append(todasLasCriptos.join(" // "));
+const criptoElegida = document.querySelectorAll(".criptoElegida");
+listaCriptos.addEventListener("mouseout", () => {
+    alert(`elegiste ${cripto.nombre}`)
+})
 
 
-let criptoElegida = prompt("que cripto quiere comprar?");
 
-const criptoSeleccionada = criptomonedas.find((cripto) => cripto.nombre == criptoElegida);
-console.log(criptoSeleccionada);
 
-let monto = prompt("ingrese monto");
+// let criptoElegida = prompt("que cripto quiere comprar?");
 
-criptoSeleccionada.comprar(monto);
+// const criptoSeleccionada = criptomonedas.find((cripto) => cripto.nombre == criptoElegida);
+// console.log(criptoSeleccionada);
+
+// let monto = prompt("ingrese monto");
+
+// criptoSeleccionada.comprar(monto);
 
 
 
