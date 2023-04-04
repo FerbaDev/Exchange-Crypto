@@ -35,7 +35,7 @@ const listaCriptos = document.createElement("select");
 listaCriptos.classList.add("listaCriptos");
 
 for (cripto of criptomonedas) {
-    listaCriptos.innerHTML += `<option class="criptoElegida" value="">${cripto.nombre}</option>`
+    listaCriptos.innerHTML += `<option class="criptoElegida" value="${cripto.nombre}">${cripto.nombre}</option>`
 }
 
 const topBox = document.querySelector(".top-box");
@@ -45,10 +45,22 @@ topBox.append(listaCriptos);
 //empiezo con inputs
 
 const criptoElegida = document.querySelectorAll(".criptoElegida");
-listaCriptos.addEventListener("mouseout", () => {
-    alert(`elegiste ${cripto.nombre}`)
-})
 
+listaCriptos.addEventListener("change", recuperarCriptoNombre);
+
+
+function recuperarCriptoNombre() {
+    let criptoSeleccionada = listaCriptos.value;
+    return criptoSeleccionada;
+}
+
+let monto = document.getElementById("monto");
+let montoForm = document.querySelector(".ingresoMonto")
+
+montoForm.addEventListener("submit", (capturarMonto) => {
+    capturarMonto.preventDefault();
+    alert(monto.value);
+})
 
 
 

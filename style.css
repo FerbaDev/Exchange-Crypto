@@ -43,6 +43,15 @@ h1 {
     gap: .3em;
     width: 100%;
 }
+.ingresoMonto {
+    display: flex;
+    flex-direction: row;
+    width: 95%;
+}
+.ok {
+    width: 25%;
+    
+}
 label {
     color: #FFCC70;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
