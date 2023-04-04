@@ -54,13 +54,15 @@ function recuperarCriptoNombre() {
     return criptoSeleccionada;
 }
 
-let monto = document.getElementById("monto");
-let montoForm = document.querySelector(".ingresoMonto")
+let ingreseMonto = document.getElementById("monto");
+let montoForm = document.querySelector(".ingresoMonto");
 
 montoForm.addEventListener("submit", (capturarMonto) => {
     capturarMonto.preventDefault();
-    alert(monto.value);
+    let monto = ingreseMonto.value;
+    criptoSeleccionada.comprar(monto);
 })
+
 
 
 
