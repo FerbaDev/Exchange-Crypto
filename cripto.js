@@ -30,6 +30,7 @@ let todasLasCriptos = criptomonedas.map((cripto) => cripto.nombre + " está en "
 let header = document.querySelector("header");
 header.append(todasLasCriptos.join(" // "));
 
+// select
 const listaCriptos = document.getElementById("mi-select");
 
 
@@ -42,27 +43,28 @@ const topBox = document.querySelector(".top-box");
 topBox.append(listaCriptos);
 
 //empiezo con inputs
-function capturarValor() {
-    // Obtener el elemento select por su id
-    const listaCriptos = document.getElementById("mi-select");
+
+// function capturarValor() {
+//     Obtener el elemento select por su id
+//     const listaCriptos = document.getElementById("mi-select");
     
-    // Obtener el valor seleccionado
-    let valorSeleccionado = listaCriptos.value;
+//     Obtener el valor seleccionado
+//     let valorSeleccionado = listaCriptos.value;
     
-    // Mostrar el valor seleccionado en la consola
-    console.log("El valor seleccionado es: " + valorSeleccionado);
-    }
+//     Mostrar el valor seleccionado en la consola
+//     console.log("El valor seleccionado es: " + valorSeleccionado);
+//     }
 
-const criptoElegida = document.querySelectorAll(".criptoElegida").value;
-console.log(criptoElegida);
+// const criptoElegida = document.querySelectorAll(".criptoElegida").value;
+// console.log(criptoElegida);
 
-// listaCriptos.addEventListener("change", recuperarCriptoNombre);
+listaCriptos.addEventListener("change", recuperarCriptoNombre);
 
 
-// function recuperarCriptoNombre() {
-//     let criptoSelected = listaCriptos.options[listaCriptos.selectedIndex].text;
-//     alert(criptoSelected);
-// }
+function recuperarCriptoNombre() {
+    let criptoSelected = listaCriptos.options[listaCriptos.selectedIndex].value;
+    alert(criptoSelected);
+}
 
 let ingreseMonto = document.getElementById("monto");
 let montoForm = document.querySelector(".ingresoMonto");
