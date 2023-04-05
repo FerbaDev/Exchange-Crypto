@@ -33,14 +33,9 @@ header.append(todasLasCriptos.join(" // "));
 // select
 const listaCriptos = document.getElementById("mi-select");
 
-
 for (cripto of criptomonedas) {
     listaCriptos.innerHTML += `<option class="criptoElegida" value="${cripto.nombre}">${cripto.nombre}</option>`
 }
-
-const topBox = document.querySelector(".top-box");
-
-topBox.append(listaCriptos);
 
 //empiezo con inputs
 
@@ -58,24 +53,24 @@ topBox.append(listaCriptos);
 // const criptoElegida = document.querySelectorAll(".criptoElegida").value;
 // console.log(criptoElegida);
 
-listaCriptos.addEventListener("change", recuperarCriptoNombre);
+// listaCriptos.addEventListener("change", recuperarCriptoNombre);
 
 
-function recuperarCriptoNombre() {
-    let criptoSelected = listaCriptos.options[listaCriptos.selectedIndex].value;
-    alert(criptoSelected);
-}
+// function recuperarCriptoNombre() {
+//     let criptoSelected = listaCriptos.options[listaCriptos.selectedIndex].value;
+//     alert(criptoSelected);
+// }
 
-let ingreseMonto = document.getElementById("monto");
-let montoForm = document.querySelector(".ingresoMonto");
+// let ingreseMonto = document.getElementById("monto");
+// let montoForm = document.querySelector(".ingresoMonto");
 
 
-montoForm.addEventListener("submit", (e) => {
-    e.preventDefault();
-    alert(ingreseMonto.value);
-    // criptoSeleccionada.comprar(monto);
-    montoForm.reset();
-})
+// montoForm.addEventListener("submit", (e) => {
+//     e.preventDefault();
+//     alert(ingreseMonto.value);
+//     // criptoSeleccionada.comprar(monto);
+//     montoForm.reset();
+// })
 
 
 
