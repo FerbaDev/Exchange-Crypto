@@ -50,6 +50,11 @@ function comprarCripto(e) {
     console.log(criptoSeleccionada.value);
     const criptoElegida = criptomonedas.find((cripto) => cripto.nombre == criptoSeleccionada.value);
     console.log(criptoElegida);
+
+    let ingreseMonto = document.getElementById("monto");
+
+    let total = ingreseMonto.value / criptoElegida.precio;
+    console.log(`vas a recibir ${total} ${criptoElegida.nombre}`);
 }
 
 // function capturarValor() {
