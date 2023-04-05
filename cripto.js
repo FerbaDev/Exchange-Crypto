@@ -39,6 +39,19 @@ for (cripto of criptomonedas) {
 
 //empiezo con inputs
 
+const botonComprar = document.querySelector(".botonComprar");
+
+botonComprar.addEventListener('click', comprarCripto);
+
+function comprarCripto(e) {
+    e.preventDefault();
+
+    const criptoSeleccionada = document.querySelector("#mi-select");
+    console.log(criptoSeleccionada.value);
+    const criptoElegida = criptomonedas.find((cripto) => cripto.nombre == criptoSeleccionada.value);
+    console.log(criptoElegida);
+}
+
 // function capturarValor() {
 //     Obtener el elemento select por su id
 //     const listaCriptos = document.getElementById("mi-select");
