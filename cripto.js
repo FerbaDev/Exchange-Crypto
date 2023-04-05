@@ -30,9 +30,8 @@ let todasLasCriptos = criptomonedas.map((cripto) => cripto.nombre + " está en "
 let header = document.querySelector("header");
 header.append(todasLasCriptos.join(" // "));
 
-//seleccion
-const listaCriptos = document.createElement("select");
-listaCriptos.classList.add("listaCriptos");
+const listaCriptos = document.getElementById("mi-select");
+
 
 for (cripto of criptomonedas) {
     listaCriptos.innerHTML += `<option class="criptoElegida" value="${cripto.nombre}">${cripto.nombre}</option>`
@@ -43,24 +42,37 @@ const topBox = document.querySelector(".top-box");
 topBox.append(listaCriptos);
 
 //empiezo con inputs
+function capturarValor() {
+    // Obtener el elemento select por su id
+    const listaCriptos = document.getElementById("mi-select");
+    
+    // Obtener el valor seleccionado
+    let valorSeleccionado = listaCriptos.value;
+    
+    // Mostrar el valor seleccionado en la consola
+    console.log("El valor seleccionado es: " + valorSeleccionado);
+    }
 
-const criptoElegida = document.querySelectorAll(".criptoElegida");
+const criptoElegida = document.querySelectorAll(".criptoElegida").value;
+console.log(criptoElegida);
 
-listaCriptos.addEventListener("change", recuperarCriptoNombre);
+// listaCriptos.addEventListener("change", recuperarCriptoNombre);
 
 
-function recuperarCriptoNombre() {
-    let criptoSeleccionada = listaCriptos.value;
-    return criptoSeleccionada;
-}
+// function recuperarCriptoNombre() {
+//     let criptoSelected = listaCriptos.options[listaCriptos.selectedIndex].text;
+//     alert(criptoSelected);
+// }
 
 let ingreseMonto = document.getElementById("monto");
 let montoForm = document.querySelector(".ingresoMonto");
 
-montoForm.addEventListener("submit", (capturarMonto) => {
-    capturarMonto.preventDefault();
-    let monto = ingreseMonto.value;
-    criptoSeleccionada.comprar(monto);
+
+montoForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    alert(ingreseMonto.value);
+    // criptoSeleccionada.comprar(monto);
+    montoForm.reset();
 })
 
 
