@@ -53,8 +53,12 @@ function comprarCripto(e) {
 
     let ingreseMonto = document.getElementById("monto");
 
+    let recibe = document.getElementById("recibe");
+
+
     let total = ingreseMonto.value / criptoElegida.precio;
     console.log(`vas a recibir ${total} ${criptoElegida.nombre}`);
+    recibe.innerHTML = `<p>vas a recibir ${total} ${criptoElegida.nombre}</p>`;
 }
 
 // function capturarValor() {
