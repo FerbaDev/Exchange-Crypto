@@ -52,6 +52,9 @@ function comprarCripto(e) {
     let recibe = document.getElementById("recibe");
 
     let total = ingreseMonto.value / criptoElegida.precio;
-    console.log(`vas a recibir ${total} ${criptoElegida.nombre}`);
+    
     recibe.innerHTML = `<p>vas a recibir ${total} ${criptoElegida.nombre}</p>`;
+    localStorage.setItem("compra", `se compra ${total} ${criptoElegida.nombre} por ${ingreseMonto.value} USD`);
 }
+
+let botonCambioModo = document.querySelector(".cambioModo");
