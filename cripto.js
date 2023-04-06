@@ -57,4 +57,33 @@ function comprarCripto(e) {
     localStorage.setItem("compra", `se compra ${total} ${criptoElegida.nombre} por ${ingreseMonto.value} USD`);
 }
 
+// modo oscuro
 let botonCambioModo = document.querySelector(".cambioModo");
+const body = document.body;
+
+let modoOscuro = localStorage.getItem("modo-oscuro");
+
+function cambioAModoOscuro() {
+    body.classList.add("modo-oscuro");
+    localStorage.setItem("modo-oscuro", "activado");
+}
+
+function volverAModoClaro() {
+    body.classList.remove("modo-oscuro");
+    localStorage.setItem("modo-oscuro", "desactivado");
+}
+
+if (modoOscuro === "activado") {
+    cambioAModoOscuro();
+} else {
+    volverAModoClaro();
+}
+
+botonCambioModo.addEventListener("click", () => {
+    modoOscuro = localStorage.getItem("modo-oscuro");
+    if (modoOscuro === "activado") {
+        volverAModoClaro();
+    } else {
+        cambioAModoOscuro();
+    }
+})

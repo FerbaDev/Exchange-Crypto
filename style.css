@@ -114,6 +114,11 @@ footer {
     display: flex;
     justify-content: space-between;
 }
+.firma {
+    color: #C850C0;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-small;
+}
 
 .cambioModo {
     margin-right: 50px;
@@ -128,4 +133,9 @@ footer {
 
 .cambioModo:hover {
     background-color: #1d092e;
+}
+
+.modo-oscuro {
+    background-color: rgb(98,53,126);
+    background-image: linear-gradient(90deg, rgba(56,14,82,1) 38%, rgba(85,71,30,1) 87%, rgba(33,37,41,1) 98%);
 }
