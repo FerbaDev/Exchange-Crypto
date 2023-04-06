@@ -65,11 +65,13 @@ let modoOscuro = localStorage.getItem("modo-oscuro");
 
 function cambioAModoOscuro() {
     body.classList.add("modo-oscuro");
+    botonCambioModo.innerText = "Modo claro";
     localStorage.setItem("modo-oscuro", "activado");
 }
 
 function volverAModoClaro() {
     body.classList.remove("modo-oscuro");
+    botonCambioModo.innerText = "Modo oscuro";
     localStorage.setItem("modo-oscuro", "desactivado");
 }
 
