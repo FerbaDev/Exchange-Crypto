@@ -6,10 +6,6 @@ class Cripto {
         this.chain = chain;
         this.precio = precio;
     }
-    comprar(monto) {
-        let total = monto / this.precio;
-        return alert(`usted va a comprar ${total} ${this.nombre}`);
-    }
 }
 
 const bitcoin = new Cripto("Bitcoin", "BTC", "bitcoin", 28000);
@@ -37,7 +33,7 @@ for (cripto of criptomonedas) {
     listaCriptos.innerHTML += `<option class="criptoElegida" value="${cripto.nombre}">${cripto.nombre}</option>`
 }
 
-//empiezo con inputs
+// inputs
 
 const botonComprar = document.querySelector(".botonComprar");
 
@@ -55,57 +51,7 @@ function comprarCripto(e) {
 
     let recibe = document.getElementById("recibe");
 
-
     let total = ingreseMonto.value / criptoElegida.precio;
     console.log(`vas a recibir ${total} ${criptoElegida.nombre}`);
     recibe.innerHTML = `<p>vas a recibir ${total} ${criptoElegida.nombre}</p>`;
 }
-
-// function capturarValor() {
-//     Obtener el elemento select por su id
-//     const listaCriptos = document.getElementById("mi-select");
-    
-//     Obtener el valor seleccionado
-//     let valorSeleccionado = listaCriptos.value;
-    
-//     Mostrar el valor seleccionado en la consola
-//     console.log("El valor seleccionado es: " + valorSeleccionado);
-//     }
-
-// const criptoElegida = document.querySelectorAll(".criptoElegida").value;
-// console.log(criptoElegida);
-
-// listaCriptos.addEventListener("change", recuperarCriptoNombre);
-
-
-// function recuperarCriptoNombre() {
-//     let criptoSelected = listaCriptos.options[listaCriptos.selectedIndex].value;
-//     alert(criptoSelected);
-// }
-
-// let ingreseMonto = document.getElementById("monto");
-// let montoForm = document.querySelector(".ingresoMonto");
-
-
-// montoForm.addEventListener("submit", (e) => {
-//     e.preventDefault();
-//     alert(ingreseMonto.value);
-//     // criptoSeleccionada.comprar(monto);
-//     montoForm.reset();
-// })
-
-
-
-
-// let criptoElegida = prompt("que cripto quiere comprar?");
-
-// const criptoSeleccionada = criptomonedas.find((cripto) => cripto.nombre == criptoElegida);
-// console.log(criptoSeleccionada);
-
-// let monto = prompt("ingrese monto");
-
-// criptoSeleccionada.comprar(monto);
-
-
-
-// alert(`Muchas gracias por operar con nosotros`);
