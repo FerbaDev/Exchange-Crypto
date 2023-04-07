@@ -105,6 +105,18 @@ input::placeholder {
 .botonComprar:hover {
     background-color: #f5b640;
 }
+.cero {
+    background-color: #FFCC70;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    color: rgb(31, 29, 29);
+    font-size: 1em;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.cero:hover {
+    background-color: #f5b640;
+}
 
 footer {
     width: 100%;

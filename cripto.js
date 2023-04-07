@@ -57,6 +57,11 @@ function comprarCripto(e) {
     localStorage.setItem("compra", `se compra ${total} ${criptoElegida.nombre} por ${ingreseMonto.value} USD`);
 }
 
+const resetear = document.querySelector(".cero")
+resetear.addEventListener("click", () => {
+    recibe.innerHTML = `<p></p>`;
+})
+
 // modo oscuro
 let botonCambioModo = document.querySelector(".cambioModo");
 const body = document.body;
