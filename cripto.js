@@ -1,6 +1,7 @@
 
 class Cripto {
-    constructor(nombre, ticker, chain, precio) {
+    constructor(rank, nombre, ticker, chain, precio) {
+        this.rank = rank;
         this.nombre = nombre;
         this.ticker = ticker;
         this.chain = chain;
@@ -8,16 +9,16 @@ class Cripto {
     }
 }
 
-const bitcoin = new Cripto("Bitcoin", "BTC", "bitcoin", 28000);
-const ether = new Cripto("Ether", "ETH", "ethereum", 1800);
-const tether = new Cripto("Tether", "USDT", "ethereum", 1);
-const bnb = new Cripto("BNB", "BNB", "bsc", 330);
-const ripple = new Cripto("Ripple", "XRP", "bsc", 0.44);
-const uniswap = new Cripto("Uniswap", "UNI", "ethereum", 6.3);
-const pancakeSwap = new Cripto("PancakeSwap", "CAKE", "bsc", 3.8);
-const aave = new Cripto("Aave", "AAVE", "ethereum", 77);
-const dogecoin = new Cripto("Dogecoin", "DOGE", "bsc", 0.07);
-const polkadot = new Cripto("Polkadot", "DOT", "bsc", 6.2);
+const bitcoin = new Cripto(1, "Bitcoin", "BTC", "bitcoin", 28000);
+const ether = new Cripto(2, "Ether", "ETH", "ethereum", 1800);
+const tether = new Cripto(3, "Tether", "USDT", "ethereum", 1);
+const bnb = new Cripto(4, "BNB", "BNB", "bsc", 330);
+const ripple = new Cripto(5, "Ripple", "XRP", "bsc", 0.44);
+const uniswap = new Cripto(6, "Uniswap", "UNI", "ethereum", 6.3);
+const pancakeSwap = new Cripto(7, "PancakeSwap", "CAKE", "bsc", 3.8);
+const aave = new Cripto(8, "Aave", "AAVE", "ethereum", 77);
+const dogecoin = new Cripto(9, "Dogecoin", "DOGE", "bsc", 0.07);
+const polkadot = new Cripto(10, "Polkadot", "DOT", "bsc", 6.2);
 
 const criptomonedas = [bitcoin, ether, tether, bnb, ripple, uniswap, pancakeSwap, aave, dogecoin, polkadot];
 
@@ -94,3 +95,24 @@ botonCambioModo.addEventListener("click", () => {
         cambioAModoOscuro();
     }
 })
+
+// raking cripto
+
+const tabla = document.querySelector("#tabla");
+
+function cargarRanking() {
+    
+    criptomonedas.forEach(criptomoneda => {
+        const fila = document.createElement("tr");
+        fila.innerHTML = `
+            <td>${criptomoneda.rank}</td>
+            <td>${criptomoneda.nombre}</td>
+            <td>${criptomoneda.chain}</td>
+            <td>${criptomoneda.precio}</td>
+        `;
+
+    tabla.append(fila);
+    })
+}
+
+cargarRanking();
