@@ -99,6 +99,7 @@ botonCambioModo.addEventListener("click", () => {
 // raking cripto
 
 const tabla = document.querySelector("#tabla");
+const botonesRanking = document.querySelectorAll(".botonRanking");
 
 function cargarRanking() {
     
@@ -116,3 +117,13 @@ function cargarRanking() {
 }
 
 cargarRanking();
+
+botonesRanking.forEach(boton => {
+    boton.addEventListener("click", (e) => {
+
+        botonesRanking.forEach(boton => boton.classList.remove("active"));
+
+        e.currentTarget.classList.add("active");
+
+    })
+})
