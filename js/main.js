@@ -98,26 +98,33 @@ function cargarRanking(criptosFiltradas) {
             <td>${criptomoneda.rank}</td>
             <td>${criptomoneda.nombre}</td>
             <td>${criptomoneda.chain}</td>
-            <td>${criptomoneda.precio}</td>
+            <td>$ ${criptomoneda.precio} usd</td>
         `;
 
     tabla.append(fila);
     })
 }
 
-cargarRanking(criptomonedas);
-
 botonesRanking.forEach(boton => {
     boton.addEventListener("click", (e) => {
+        botonesRanking.forEach(boton => boton.classList.remove("active1"));
+        e.currentTarget.classList.add("active1");
 
-        botonesRanking.forEach(boton => boton.classList.remove("active"));
-        e.currentTarget.classList.add("active");
-
-        if (e.currentTarget.id != "todas") {
-            const criptoFilter = criptomonedas.filter(criptomoneda => criptomoneda.chain === e.currentTarget.id);
-            cargarRanking(criptoFilter);
+        if (e.currentTarget.id === "ethereum") {
+            let criptoChainFilter = criptomonedas.filter(criptomoneda => criptomoneda.chain === e.currentTarget.id);
+            cargarRanking(criptoChainFilter);
+        } else if (e.currentTarget.id === "bsc") {
+            let criptoChainFilter = criptomonedas.filter(criptomoneda => criptomoneda.chain === e.currentTarget.id);
+            cargarRanking(criptoChainFilter);
+        } else if (e.currentTarget.id === "defi") {
+            let criptoUtility = criptomonedas.filter(criptomoneda => criptomoneda.utilidad === e.currentTarget.id);
+            cargarRanking(criptoUtility);
+        } else if (e.currentTarget.id === "precio") {
+            let criptoRank = criptomonedas.sort(function(a, b){return b.precio - a.precio});
+            cargarRanking(criptoRank);
         } else {
-            cargarRanking(criptomonedas)
+            let criptoRanking = criptomonedas.sort(function(a, b){return a.rank - b.rank});
+            cargarRanking(criptoRanking);
         }
     })
 })
