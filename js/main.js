@@ -1,29 +1,54 @@
 
+let criptomonedas = [];
 
-let todasLasCriptos = criptomonedas.map((cripto) => cripto.nombre + " está en " + "$" + cripto.precio);
-let header = document.querySelector("header");
-header.append(todasLasCriptos.join(" // "));
+fetch("./js/criptos.json")
+    .then(response => response.json())
+    .then(data => {
+        criptomonedas = data;
+        cargarCriptos(criptomonedas);
+        cargarRanking(criptomonedas);
+    })
 
 
-const listaCriptos = document.getElementById("mi-select");
+const listaCriptos = document.getElementById("select1");
+const listaCriptos2 = document.getElementById("select2");
+function cargarCriptos(criptos) {
 
-for (let cripto of criptomonedas) {
-    listaCriptos.innerHTML += `<option class="criptoElegida" value="${cripto.nombre}">${cripto.nombre}</option>`
+    criptos.forEach(cripto => {
+        listaCriptos.innerHTML += `<option class="criptoElegida" value="${cripto.nombre}">${cripto.nombre}</option>`;
+        listaCriptos2.innerHTML += `<option class="criptoElegida" value="${cripto.nombre}">${cripto.nombre}</option>`;
+    })
 }
 
+function comprar() {
+    const criptoElegida = criptomonedas.find((cripto) => cripto.nombre == listaCriptos.value);
+    const criptoElegida2 = criptomonedas.find((cripto) => cripto.nombre == listaCriptos2.value);
+    let ingreseMonto = document.getElementById("monto");
+    let monto = parseInt(ingreseMonto.value);
+    let spancripto = document.getElementById("spancripto");
+    spancripto.innerText = criptoElegida.nombre;
+    let recibe = document.getElementById("recibe");
+    if (criptoElegida != criptoElegida2 && monto > 0) {
+        let totalCripto1 = (monto * criptoElegida.precio);
+        let totalComprado = totalCripto1 / criptoElegida2.precio;
+        recibe.innerHTML = `<p>vas a recibir ${totalComprado} ${criptoElegida2.nombre}</p>`;
+        localStorage.setItem("compra", `se compra ${totalComprado} ${criptoElegida2.nombre} por un ${monto} de ${criptoElegida.nombre}`);
+        console.log(`se compra ${totalComprado} ${criptoElegida2.nombre} por ${monto} ${criptoElegida.nombre}`);
+        
+    } else {
+        recibe.innerHTML = `<p>ERROR</p>`;
+    }
+}
 
 const botonComprar = document.querySelector(".botonComprar");
 
-botonComprar.addEventListener('click', () => {
-    const criptoElegida = criptomonedas.find((cripto) => cripto.nombre == listaCriptos.value);
-    let ingreseMonto = document.getElementById("monto");
-    let monto = parseInt(ingreseMonto.value);
-    criptoElegida.comprar(monto);
-});
+botonComprar.addEventListener("click", comprar);
 
 const resetear = document.querySelector(".cero")
 resetear.addEventListener("click", () => {
-    recibe.innerHTML = `<p></p>`;
+    recibe.innerHTML = ``;
+    let inputMonto = document.getElementById("monto");
+    inputMonto.value = "";
 })
 
 
