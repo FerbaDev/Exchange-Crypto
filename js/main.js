@@ -9,7 +9,6 @@ fetch("./js/criptos.json")
         cargarRanking(criptomonedas);
     })
 
-
 const listaCriptos = document.getElementById("select1");
 const listaCriptos2 = document.getElementById("select2");
 function cargarCriptos(criptos) {
@@ -35,8 +34,38 @@ function comprar() {
         localStorage.setItem("compra", `se compra ${totalComprado} ${criptoElegida2.nombre} por un ${monto} de ${criptoElegida.nombre}`);
         console.log(`se compra ${totalComprado} ${criptoElegida2.nombre} por ${monto} ${criptoElegida.nombre}`);
         
+        Toastify({
+            text: "Compra exitosa!",
+            duration: 3000,
+            close: true,
+            gravity: "bottom", 
+            position: "right", 
+            stopOnFocus: true, 
+            style: {
+                background: "#FFCC70",
+                color: "#4158D0",
+                borderRadius: "5px",
+            },
+            onClick: function(){} 
+        }).showToast();
     } else {
         recibe.innerHTML = `<p>ERROR</p>`;
+        setTimeout(() => {
+            Toastify({
+                text: "Elija diferentes criptomonedas y asegurese de indicar el monto a cambiar",
+                duration: 3000,
+                close: true,
+                className: "info",
+                gravity: "bottom", 
+                position: "center", 
+                stopOnFocus: true, 
+                style: {
+                    background: "#f5b640",
+                    color: "#4158D0",
+                },
+                onClick: function(){} 
+            }).showToast();
+        }, 800);
     }
 }
 
@@ -50,7 +79,6 @@ resetear.addEventListener("click", () => {
     let inputMonto = document.getElementById("monto");
     inputMonto.value = "";
 })
-
 
 let botonCambioModo = document.querySelector(".cambioModo");
 const body = document.body;
@@ -84,14 +112,12 @@ botonCambioModo.addEventListener("click", () => {
     }
 })
 
-
 const tabla = document.querySelector("#tabla");
 const botonesRanking = document.querySelectorAll(".botonRanking");
 
 function cargarRanking(criptosFiltradas) {
 
     tabla.innerHTML = "";
-    
     criptosFiltradas.forEach(criptomoneda => {
         const fila = document.createElement("tr");
         fila.innerHTML = `
@@ -128,3 +154,20 @@ botonesRanking.forEach(boton => {
         }
     })
 })
+
+setTimeout(() => {
+    Toastify({
+        text: "ADVERTENCIA: CriptoSwap no es su broker, intermediario, agente o asesor y no tiene ninguna relación fiduciaria u obligación con con los Usuarios relacionada con transacciones u otras decisiones o actividades realizadas que realicen utilizando los Servicios de CriptoSwap. CriptoSwap no supervisa que el uso que se realice de los Servicios de CriptoSwap sea coherente con las metas y objetivos financieros de los Usuarios. Depende del usuario evaluar si sus recursos financieros son adecuados para su actividad con CriptoSwap, y para su tolerancia al riesgo de los Servicios de CriptoSwap que utiliza.",
+        duration: 8000,
+        close: true,
+        className: "info",
+        gravity: "bottom", 
+        position: "center", 
+        stopOnFocus: true, 
+        style: {
+            background: "#f5b640",
+            color: "#4158D0",
+        },
+        onClick: function(){} 
+    }).showToast();
+}, 2000);
