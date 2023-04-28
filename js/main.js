@@ -1,32 +1,4 @@
 
-class Cripto {
-    constructor(rank, nombre, ticker, chain, precio) {
-        this.rank = rank;
-        this.nombre = nombre;
-        this.ticker = ticker;
-        this.chain = chain;
-        this.precio = precio;
-    }
-    comprar(monto) {
-        let recibe = document.getElementById("recibe");
-        recibe.innerHTML = `<p>vas a recibir ${monto / this.precio} ${this.nombre}</p>`;
-        localStorage.setItem("compra", `se compra ${monto / this.precio} ${this.nombre} por ${monto} USD`);
-    }
-}
-
-const bitcoin = new Cripto(1, "Bitcoin", "BTC", "bitcoin", 28000);
-const ether = new Cripto(2, "Ether", "ETH", "ethereum", 1800);
-const tether = new Cripto(3, "Tether", "USDT", "ethereum", 1);
-const bnb = new Cripto(4, "BNB", "BNB", "bsc", 330);
-const ripple = new Cripto(5, "Ripple", "XRP", "bsc", 0.44);
-const uniswap = new Cripto(6, "Uniswap", "UNI", "ethereum", 6.3);
-const pancakeSwap = new Cripto(7, "PancakeSwap", "CAKE", "bsc", 3.8);
-const aave = new Cripto(8, "Aave", "AAVE", "ethereum", 77);
-const dogecoin = new Cripto(9, "Dogecoin", "DOGE", "bsc", 0.07);
-const polkadot = new Cripto(10, "Polkadot", "DOT", "bsc", 6.2);
-
-const criptomonedas = [bitcoin, ether, tether, bnb, ripple, uniswap, pancakeSwap, aave, dogecoin, polkadot];
-
 
 let todasLasCriptos = criptomonedas.map((cripto) => cripto.nombre + " está en " + "$" + cripto.precio);
 let header = document.querySelector("header");
@@ -35,7 +7,7 @@ header.append(todasLasCriptos.join(" // "));
 
 const listaCriptos = document.getElementById("mi-select");
 
-for (cripto of criptomonedas) {
+for (let cripto of criptomonedas) {
     listaCriptos.innerHTML += `<option class="criptoElegida" value="${cripto.nombre}">${cripto.nombre}</option>`
 }
 
