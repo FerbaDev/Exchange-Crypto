@@ -31,16 +31,16 @@
             <h1>Exchange cripto</h1>
             <div class="box">
                 <div class="top-box">
-                    <label for="mi-select">Seleccione cripto</label>
-                    <select name="" id="mi-select"></select>
-                    <input type="text">
+                    <label for="select1">Quiero cambiar <span id="spancripto"></span></label>
+                    <select name="" id="select1" class="select"></select>
+                    <input type="number" id="monto" placeholder="ingrese monto" min="1" max="1000000">
                 </div>
-                <form action="" class="ingresoMonto">
-                    <input type="number" id="monto" placeholder="ingrese monto en dólares" min="1" max="1000000">
-                </form>
-                
-                <div id="recibe">
-                    
+                <div class="bottom-box">
+                    <label for="select2">Quiero recibir</label>
+                    <select name="" id="select2" class="select"></select>
+                    <div id="recibe">
+
+                    </div>
                 </div>
                 <div>
                     <button class="botonComprar">Comprar!</button>
