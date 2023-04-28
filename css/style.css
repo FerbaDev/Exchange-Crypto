@@ -38,7 +38,7 @@ main {
     flex-direction: column;
     justify-content: center;
     gap: .5em;
-    width: 80%;
+    width: 50%;
 }
 h1 {
     color: #4158D0;
@@ -221,8 +221,16 @@ footer {
 }
 
 .info {
-    width: 80%;
+    width: 50%;
     padding: 20px;
     margin-bottom: 2em;
 }
 
+@media screen and (max-width: 1080px) {
+    .container {
+        width: 80%;
+    }
+    .info {
+        width: 80%;
+    }
+}
